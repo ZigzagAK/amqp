@@ -639,10 +639,20 @@ function amqp:publish(payload, opts, properties)
       return nil, err
    end
 
-   local ok, err = frame.wire_body_frame(self, payload)
-   if not ok then
-      logger.error("[amqp.publish] failed: ", err)
-      return nil, err
+   local pos = 1
+   local left = size
+
+   while left > 0 do
+      local chunk = min(left, self.frame_max)
+
+      local ok, err = frame.wire_body_frame(self, payload:sub(pos, pos + chunk - 1))
+      if not ok then
+         logger.error("[amqp.publish] failed: ", err)
+         return nil, err
+      end
+
+      pos = pos + chunk
+      left = left - chunk
    end
 
    return true
