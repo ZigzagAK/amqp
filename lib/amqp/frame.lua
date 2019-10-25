@@ -6,8 +6,6 @@
 -- [1].https://www.rabbitmq.com/amqp-0-9-1-reference.html
 --
 
-module("frame",package.seeall)
-
 local c = require "consts"
 local buffer = require "buffer"
 local logger = require "logger"

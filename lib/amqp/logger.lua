@@ -4,8 +4,6 @@
 -- logger
 --
 
-module("logger",package.seeall)
-
 local logger = {}
 
 

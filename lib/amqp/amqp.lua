@@ -2,8 +2,6 @@
 -- Copyright (C) 2016 Meng Zhang @ Yottaa,Inc
 --
 
-module("amqp",package.seeall)
-
 local c = require "consts"
 local frame = require "frame"
 local logger = require "logger"

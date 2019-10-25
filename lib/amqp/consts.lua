@@ -3,7 +3,6 @@
 --
 -- Constants definition
 --
-module("consts",package.seeall)
 
 local amqp = {
 
@@ -163,7 +162,7 @@ local amqp = {
    },
 
    PRODUCT = "amqp-lua",
-   VERSION  = "1.0",
+   VERSION  = "2.0.6",
    COPYRIGHT = "Copyright (c) 2016 Meng Zhang @Yottaa,Inc",
    LOCALE = "en_US",
    MECHANISM_PLAIN = "PLAIN"
